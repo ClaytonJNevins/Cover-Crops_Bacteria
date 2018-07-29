@@ -1,0 +1,125 @@
+#Clayton Nevins
+#QIIME Mapping File
+#name in code="ccmapfinaloutput"
+
+#SampleID	Plot	Cover	Tillage	Date
+S.97	109	Hairy Vetch	Spring Tillage	(5)8.1.2016
+S.98	110	Hairy Vetch	No Tillage	(5)8.1.2016
+S.99	111	Mix	Spring Tillage	(5)8.1.2016
+S.100	112	Mix	No Tillage	(5)8.1.2016
+S.101	133	Control	Spring Tillage	(5)8.1.2016
+S.102	134	Control	No Tillage	(5)8.1.2016
+S.103	135	Cereal Rye	Spring Tillage	(5)8.1.2016
+S.104	136	Cereal Rye	No Tillage	(5)8.1.2016
+S.105	201	Control	No Tillage	(5)8.1.2016
+S.106	202	Control	Spring Tillage	(5)8.1.2016
+S.107	213	Cereal Rye	No Tillage	(5)8.1.2016
+S.108	214	Cereal Rye	Spring Tillage	(5)8.1.2016
+S.109	215	Hairy Vetch	Spring Tillage	(5)8.1.2016
+S.110	216	Hairy Vetch	No Tillage	(5)8.1.2016
+S.111	225	Mix	No Tillage	(5)8.1.2016
+S.112	226	Mix	Spring Tillage	(5)8.1.2016
+S.113	309	Cereal Rye	No Tillage	(5)8.1.2016
+S.114	310	Cereal Rye	Spring Tillage	(5)8.1.2016
+S.115	321	Mix	Spring Tillage	(5)8.1.2016
+S.116	322	Mix	No Tillage	(5)8.1.2016
+S.117	323	Control	No Tillage	(5)8.1.2016
+S.118	324	Control	Spring Tillage	(5)8.1.2016
+S.119	333	Hairy Vetch	No Tillage	(5)8.1.2016
+S.120	334	Hairy Vetch	Spring Tillage	(5)8.1.2016
+S.49	109	Hairy Vetch	Spring Tillage	(3)6.6.2016
+S.50	110	Hairy Vetch	No Tillage	(3)6.6.2016
+S.51	111	Mix	Spring Tillage	(3)6.6.2016
+S.52	112	Mix	No Tillage	(3)6.6.2016
+S.53	133	Control	Spring Tillage	(3)6.6.2016
+S.54	134	Control	No Tillage	(3)6.6.2016
+S.55	135	Cereal Rye	Spring Tillage	(3)6.6.2016
+S.56	136	Cereal Rye	No Tillage	(3)6.6.2016
+S.57	201	Control	No Tillage	(3)6.6.2016
+S.58	202	Control	Spring Tillage	(3)6.6.2016
+S.59	213	Cereal Rye	No Tillage	(3)6.6.2016
+S.60	214	Cereal Rye	Spring Tillage	(3)6.6.2016
+S.61	215	Hairy Vetch	Spring Tillage	(3)6.6.2016
+S.62	216	Hairy Vetch	No Tillage	(3)6.6.2016
+S.63	225	Mix	No Tillage	(3)6.6.2016
+S.64	226	Mix	Spring Tillage	(3)6.6.2016
+S.65	309	Cereal Rye	No Tillage	(3)6.6.2016
+S.66	310	Cereal Rye	Spring Tillage	(3)6.6.2016
+S.67	321	Mix	Spring Tillage	(3)6.6.2016
+S.68	322	Mix	No Tillage	(3)6.6.2016
+S.69	323	Control	No Tillage	(3)6.6.2016
+S.70	324	Control	Spring Tillage	(3)6.6.2016
+S.71	333	Hairy Vetch	No Tillage	(3)6.6.2016
+S.72	334	Hairy Vetch	Spring Tillage	(3)6.6.2016
+S.73	109	Hairy Vetch	Spring Tillage	(4)6.28.2016
+S.74	110	Hairy Vetch	No Tillage	(4)6.28.2016
+S.75	111	Mix	Spring Tillage	(4)6.28.2016
+S.76	112	Mix	No Tillage	(4)6.28.2016
+S.77	133	Control	Spring Tillage	(4)6.28.2016
+S.78	134	Control	No Tillage	(4)6.28.2016
+S.79	135	Cereal Rye	Spring Tillage	(4)6.28.2016
+S.80	136	Cereal Rye	No Tillage	(4)6.28.2016
+S.81	201	Control	No Tillage	(4)6.28.2016
+S.82	202	Control	Spring Tillage	(4)6.28.2016
+S.83	213	Cereal Rye	No Tillage	(4)6.28.2016
+S.84	214	Cereal Rye	Spring Tillage	(4)6.28.2016
+S.85	215	Hairy Vetch	Spring Tillage	(4)6.28.2016
+S.86	216	Hairy Vetch	No Tillage	(4)6.28.2016
+S.87	225	Mix	No Tillage	(4)6.28.2016
+S.88	226	Mix	Spring Tillage	(4)6.28.2016
+S.89	309	Cereal Rye	No Tillage	(4)6.28.2016
+S.90	310	Cereal Rye	Spring Tillage	(4)6.28.2016
+S.91	321	Mix	Spring Tillage	(4)6.28.2016
+S.92	322	Mix	No Tillage	(4)6.28.2016
+S.93	323	Control	No Tillage	(4)6.28.2016
+S.94	324	Control	Spring Tillage	(4)6.28.2016
+S.95	333	Hairy Vetch	No Tillage	(4)6.28.2016
+S.96	334	Hairy Vetch	Spring Tillage	(4)6.28.2016
+S.25	109	Hairy Vetch	Spring Tillage	(1)5.5.2016
+S.26	110	Hairy Vetch	No Tillage	(1)5.5.2016
+S.27.1	111	Mix	Spring Tillage	(1)5.5.2016
+S.28	112	Mix	No Tillage	(1)5.5.2016
+S.29	133	Control	Spring Tillage	(1)5.5.2016
+S.30	134	Control	No Tillage	(1)5.5.2016
+S.31	135	Cereal Rye	Spring Tillage	(1)5.5.2016
+S.32	136	Cereal Rye	No Tillage	(1)5.5.2016
+S.33	201	Control	No Tillage	(1)5.5.2016
+S.34	202	Control	Spring Tillage	(1)5.5.2016
+S.35.1	213	Cereal Rye	No Tillage	(1)5.5.2016
+S.36	214	Cereal Rye	Spring Tillage	(1)5.5.2016
+S.37	215	Hairy Vetch	Spring Tillage	(1)5.5.2016
+S.38	216	Hairy Vetch	No Tillage	(1)5.5.2016
+S.39	225	Mix	No Tillage	(1)5.5.2016
+S.40	226	Mix	Spring Tillage	(1)5.5.2016
+S.41	309	Cereal Rye	No Tillage	(1)5.5.2016
+S.42	310	Cereal Rye	Spring Tillage	(1)5.5.2016
+S.43.1	321	Mix	Spring Tillage	(1)5.5.2016
+S.44	322	Mix	No Tillage	(1)5.5.2016
+S.45	323	Control	No Tillage	(1)5.5.2016
+S.46	324	Control	Spring Tillage	(1)5.5.2016
+S.47	333	Hairy Vetch	No Tillage	(1)5.5.2016
+S.48	334	Hairy Vetch	Spring Tillage	(1)5.5.2016
+S.A	109	Hairy Vetch	Spring Tillage	(2)5.23.2016
+S.B	110	Hairy Vetch	No Tillage	(2)5.23.2016
+S.C2	111	Mix	Spring Tillage	(2)5.23.2016
+S.D	112	Mix	No Tillage	(2)5.23.2016
+S.E	133	Control	Spring Tillage	(2)5.23.2016
+S.F	134	Control	No Tillage	(2)5.23.2016
+S.G	135	Cereal Rye	Spring Tillage	(2)5.23.2016
+S.H	136	Cereal Rye	No Tillage	(2)5.23.2016
+S.I	201	Control	No Tillage	(2)5.23.2016
+S.J	202	Control	Spring Tillage	(2)5.23.2016
+S.K2	213	Cereal Rye	No Tillage	(2)5.23.2016
+S.L	214	Cereal Rye	Spring Tillage	(2)5.23.2016
+S.M	215	Hairy Vetch	Spring Tillage	(2)5.23.2016
+S.N	216	Hairy Vetch	No Tillage	(2)5.23.2016
+S.O	225	Mix	No Tillage	(2)5.23.2016
+S.P	226	Mix	Spring Tillage	(2)5.23.2016
+S.Q	309	Cereal Rye	No Tillage	(2)5.23.2016
+S.R	310	Cereal Rye	Spring Tillage	(2)5.23.2016
+S.S	321	Mix	Spring Tillage	(2)5.23.2016
+S.T	322	Mix	No Tillage	(2)5.23.2016
+S.U	323	Control	No Tillage	(2)5.23.2016
+S.V	324	Control	Spring Tillage	(2)5.23.2016
+S.W	333	Hairy Vetch	No Tillage	(2)5.23.2016
+S.X	334	Hairy Vetch	Spring Tillage	(2)5.23.2016

@@ -1,4 +1,4 @@
-/* Meeting 12/06/2016, 12/09/2016 */
+#SAS Code for Statistical Analysis of Enzyme Activity
 
 /* prepare plot-specific data */
 PROC IMPORT OUT=mydata0
@@ -155,5 +155,5 @@ RANDOM Rep;
 REPEATED / SUBJECT=Plot TYPE=AR(1);
 /* correlation: http://www2.sas.com/proceedings/sugi30/198-30.pdf */
 LSMEANS Treatment / DIFF ADJUST=TUKEY;
-* SLICE Treatment*Tillage / SLICEBY=Tillage DIFF ADJUST=TUKEY;
+SLICE Treatment*Tillage / SLICEBY=Tillage DIFF ADJUST=TUKEY;
 RUN;

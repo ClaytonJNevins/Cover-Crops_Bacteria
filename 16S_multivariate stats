@@ -1,3 +1,7 @@
+#Clayton Nevins
+#16S sequence data
+#QIIME multivariate statistics analysis
+
 #core_diversity_analyses.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -aO 10 -o FinalOutput_CDA/ -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt --recover_from_failure -c Plot,Cover,Tillage,Date,Controls,Rye,Moisture,Moisture-Quartile,Moisture-Scale,NO3-,NO3-Quartile,NO3-Scale,5.5.2016:NO3-,5.23.2016:NO3-,6.6.2016:NO3-,6.28.2016:NO3-,8.1.2016:NO3-,NH4+,NH4+Quartile,NH4+Scale,5.5.2016:NH4+,5.23.2016:NH4+,6.6.2016:NH4+,6.28.2016:NH4+,8.1.2016:NH4+,InorganicN,InorganicN-Quartile,InorganicN-Scale,pH,SOM,Bglucosidase,Urease
 
 ##Determining main effect significance

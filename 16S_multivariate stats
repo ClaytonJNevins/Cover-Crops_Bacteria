@@ -1,0 +1,494 @@
+#core_diversity_analyses.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -aO 10 -o FinalOutput_CDA/ -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt --recover_from_failure -c Plot,Cover,Tillage,Date,Controls,Rye,Moisture,Moisture-Quartile,Moisture-Scale,NO3-,NO3-Quartile,NO3-Scale,5.5.2016:NO3-,5.23.2016:NO3-,6.6.2016:NO3-,6.28.2016:NO3-,8.1.2016:NO3-,NH4+,NH4+Quartile,NH4+Scale,5.5.2016:NH4+,5.23.2016:NH4+,6.6.2016:NH4+,6.28.2016:NH4+,8.1.2016:NH4+,InorganicN,InorganicN-Quartile,InorganicN-Scale,pH,SOM,Bglucosidase,Urease
+
+##Determining main effect significance
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_cover1 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_date -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Controls -o /scratch/snyder/c/cnevins/FinalOutput_CDA/ControlsBC/FinalOutput_permanova_controls -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Controls -o /scratch/snyder/c/cnevins/FinalOutput_CDA/ControlsBC/FinalOutput_permdisp_controls -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Rye -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_rye -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Rye -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_rye -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Moisture -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_moisture -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Moisture -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_moisture -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_inorganicN -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_inorganicN -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permanova_inorganicN -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_permdisp_inorganicN -n 999
+
+#By Treatment:CCControl
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCControl_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Cover:Control'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCControl_otu_table.biom -aO 10 --recover_from_failure -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/ -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,Date
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_permdisp_date -n 999
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_permdisp_tillage -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_adonis_date -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/FinalOutput_adonis_tillage -n 999
+
+#By Treatment:CCCerealRye
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCCerealRye_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Cover:Cereal Rye'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCCerealRye_otu_table.biom -aO 10 --recover_from_failure -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/ -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,Date
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_permdisp_date -n 999
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_permdisp_tillage -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_adonis_date -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/FinalOutput_adonis_tillage -n 999
+
+#By Treatment:CCMixture
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCMixture_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Cover:Mix'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCMixture_otu_table.biom  --suppress_taxa_summary -aO 10 --recover_from_failure -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/ -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,Date
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_permdisp_date -n 999
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_permdisp_tillage -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_adonis_date -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/FinalOutput_adonis_tillage -n 999
+
+#By Treatment:CCHairyVetch
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCHairyVetch_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Cover:Hairy Vetch'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_CCHairyVetch_otu_table.biom --suppress_taxa_summary -aO 10 --recover_from_failure -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/ -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,Date
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_permdisp_date -n 999
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_permdisp_tillage -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_adonis_date -n 999
+#compare_categories.py --method adonis -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/FinalOutput_adonis_tillage -n 999
+
+
+PERMANOVA&PERMDISP of BRAY CURTIS
+#Control
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/Bray_Curtis/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/Bray_Curtis/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/Bray_Curtis/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/Bray_Curtis/FinalOutput_permdisp_tillage -n 999
+
+#CerealRye
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/Bray_Curtis/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/Bray_Curtis/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/Bray_Curtis/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/Bray_Curtis/FinalOutput_permdisp_tillage -n 999
+
+#Mix
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/Bray_Curtis/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/Bray_Curtis/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/Bray_Curtis/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/Bray_Curtis/FinalOutput_permdisp_tillage -n 999
+
+#HairyVetch
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/Bray_Curtis/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/Bray_Curtis/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/Bray_Curtis/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/Bray_Curtis/FinalOutput_permdisp_tillage -n 999
+
+#Overall
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permanova_cover -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permdisp_cover -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Bray_Curtis/FinalOutput_permdisp_tillage -n 999
+
+
+PERMANOVA&PERMDISP of weighted_unifrac
+#Control
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/weighted_unifrac/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/weighted_unifrac/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/weighted_unifrac/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCControl.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCControl_CDA/weighted_unifrac/FinalOutput_permdisp_tillage -n 999
+
+#CerealRye
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/weighted_unifrac/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/weighted_unifrac/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/weighted_unifrac/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCCerealRye.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCCerealRye_CDA/weighted_unifrac/FinalOutput_permdisp_tillage -n 999
+
+#Mix
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/weighted_unifrac/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/weighted_unifrac/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/weighted_unifrac/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCMixture_CDA/weighted_unifrac/FinalOutput_permdisp_tillage -n 999
+
+#HairyVetch
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/weighted_unifrac/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/weighted_unifrac/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/weighted_unifrac/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/finalmapCCHairyVetch.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CCHairyVetch_CDA/weighted_unifrac/FinalOutput_permdisp_tillage -n 999
+
+#Overall
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permanova_cover -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permdisp_cover -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permanova_date -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permdisp_date -n 999
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permanova_tillage -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_CDA/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_CDA/weighted_unifrac/FinalOutput_permdisp_tillage -n 999
+
+
+
+
+#Removing VE
+#filter_samples_from_otu_table.py -i  FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o  /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_noVE_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Date:*,!5.5.2016'
+#core_diversity_analyses.py -i /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_noVE_otu_table.biom -aO 10 --recover_from_failure -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/ -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -e 85831 -t /scratch/scholar/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/scholar/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Date,Controls,Rye,Moisture-Quartile,Moisture-Scale,NO3-Quartile,NO3-Scale,NH4+Quartile,NH4+Scale,InorganicN-Quartile,InorganicN-Scale
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutputnoVE_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Date -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutputnoVE_db-rda_date -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutputnoVE_db-rda_tillage -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Controls -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutputnoVE_db-rda_controls -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Rye -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutputnoVE_db-rda_rye -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Date -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permanova_date -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Date -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permdisp_date -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/ccmapfinalminusVE.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_noVE_CDA/FinalOutput_permdisp_tillage -n 999
+
+
+##Analyzing R2
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_R2_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Date:8.1.2016'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_R2_otu_table.biom -aO 10 -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/ -m /scratch/snyder/c/cnevins/R2finalmap.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Controls,Rye,8.1.2016:Moisture,Moisture-Quartile,SeasonMoisture,SeasonMoisture-Scale,8.1.2016:NO3-,NO3-Quartile,SeasonNO3-,SeasonNO3-Scale,8.1.2016:NH4+,NH4+Quartile,SeasonNH4+,Season:NH4+Scale,8.1.2016:InorganicN,InorganicN-Quartile,SeasonInorganicN,SeasonpH,SOM
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_db-rda_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permdisp_tillage -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c 8.1.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permanova_8.1.2016:NH4+ -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -c 8.1.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/FinalOutput_only_R2_permdisp_8.1.2016:NH4+ -n 999
+
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/R2finalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_R2/bdiv_even85831/make2dplotscover/
+
+##Analyzing VT
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VT_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Date:6.28.2016'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VT_otu_table.biom -aO 10 -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/ -m /scratch/snyder/c/cnevins/VTfinalmap.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Controls,Rye,6.28.2016:Moisture,Moisture-Quartile,SeasonMoisture,SeasonMoisture-Scale,6.28.2016:NO3-,NO3-Quartile,SeasonNO3-,SeasonNO3-Scale,6.28.2016:NH4+,NH4+Quartile,SeasonNH4+,SeasonNH4+Scale,6.28.2016:InorganicN,InorganicN-Quartile,SeasonInorganicN,InorganicN-Scale,pH,SOM
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Date -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_db-rda_date -n 999
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_db-rda_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permdisp_tillage -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c 6.28.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permanova_6.28.2016:NH4+ -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -c 6.28.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/FinalOutput_only_VT_permdisp_6.28.2016:NH4+ -n 999
+
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VTfinalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_VT/bdiv_even85831/make2dplotscover/
+
+##Analyzing V6
+#filter_samples_from_otu_table.py -i /scratch/scholar/c/cnevins/FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -m /scratch/scholar/c/cnevins/ccmapfinaloutput.txt -s 'Date:6.6.2016'
+#core_diversity_analyses.py -i /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -a -O 10 -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/ -m /scratch/scholar/c/cnevins/V6finalmap.txt -e 85831 -t /scratch/scholar/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/scholar/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Controls,Rye,6.6.2016:Moisture,SeasonMoisture,Moisture-Quartile,Moisture-Scale,6.6.2016:NO3-,SeasonNO3-,NO3-Quartile,NO3-Scale,6.6.2016:NH4+,SeasonNH4+,NH4+Quartile,SeasonNH4+Scale,6.6.2016:InorganicN,SeasonInorganicN,InorganicN-Quartile,InorganicN-Scale,pH,SOM
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_db-rda_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/V6finalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permdisp_tillage -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permanova_6.6.2016:NH4+ -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permdisp_6.6.2016:NH4+ -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/make2dplotscover/
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/make2dplotstillageWU/
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permanova_WU -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/FinalOutput_only_V6_permdisp_WU -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/weighted_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6/bdiv_even85831/make2dplotscover_WU/
+
+
+
+
+LOOKING AT TILLAGE WITHIN COVER CROP WITHIN SAMPLING DATE
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_CR/FinalOutput_otus_V6__CR_otu_table.biom -m /scratch/snyder/c/cnevins/V6finalmap.txt -s 'Cover:Cereal Rye'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_CR/FinalOutput_otus_V6__CR_otu_table.biom -a -O 10 -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/ -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,6.6.2016:Moisture,6.6.2016:NO3-,6.6.2016:NH4+,6.6.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_Con/FinalOutput_otus_V6__Con_otu_table.biom -m /scratch/snyder/c/cnevins/V6finalmap.txt -s 'Cover:Control'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_Con/FinalOutput_otus_V6__Con_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/ -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,6.6.2016:Moisture,6.6.2016:NO3-,6.6.2016:NH4+,6.6.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/FinalOutput_only_V6_Con_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCon.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Con/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_Mix/FinalOutput_otus_V6__Mix_otu_table.biom -m /scratch/snyder/c/cnevins/V6finalmap.txt -s 'Cover:Mix'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_Mix/FinalOutput_otus_V6__Mix_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/ -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,6.6.2016:Moisture,6.6.2016:NO3-,6.6.2016:NH4+,6.6.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/FinalOutput_only_V6_Mix_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapMix.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_Mix/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V6_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_HV/FinalOutput_otus_V6__HV_otu_table.biom -m /scratch/snyder/c/cnevins/V6finalmap.txt -s 'Cover:Hairy Vetch'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_HV/FinalOutput_otus_V6__HV_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/ -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,6.6.2016:Moisture,6.6.2016:NO3-,6.6.2016:NH4+,6.6.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -c 6.6.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/FinalOutput_only_V6_HV_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapHV.txt -b '6.6.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_HV/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#Analyzing V3
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V3_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Date:5.23.2016'
+#core_diversity_analyses.py -i /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V3_otu_table.biom -aO 10 -o /scratch/scholar/c/cnevins/FinalOutput_only_V3/ -m /scratch/scholar/c/cnevins/V3finalmap.txt -e 85831 -t /scratch/scholar/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/scholar/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Controls,Rye,5.23.2016:Moisture,SeasonMoisture,Moisture-Quartile,Moisture-Scale,5.23.2016:NO3-,SeasonNO3-,NO3-Quartile,NO3-Scale,5.23.2016:NH4+,SeasonNH4+,NH4+Quartile,NH4+Scale,5.23.2016:InorganicN,SeasonInorganicN,InorganicN-Quartile,InorganicN-Scale,pH,SOM
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_db-rda_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permdisp_tillage -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c 5.23.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permanova_5.23.2016:NH4+ -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -c 5.23.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/FinalOutput_only_V3_permdisp_5.23.2016:NH4+ -n 999
+
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/make2dplotscover/
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/weighted_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V3finalmap.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V3/bdiv_even85831/make2dplotstillageWU/
+
+
+filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_V3_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V3_CR/FinalOutput_otus_V3__CR_otu_table.biom -m /scratch/snyder/c/cnevins/V3finalmap.txt -s 'Cover:Cereal Rye'
+core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_V6_CR/FinalOutput_otus_V6__CR_otu_table.biom -a -O 10 -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/ -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,6.6.2016:Moisture,6.6.2016:NO3-,6.6.2016:NH4+,6.6.2016:InorganicN
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permanova_Till -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permdisp_Till -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c NH4+,6.6.2016 -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permanova_NH4 -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -c NH4+,6.6.2016 -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/FinalOutput_only_V6_CR_permdisp_NH4 -n 999
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/V6finalmapCR.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_V6_CR/bdiv_even85831/make2dplotscover/
+
+
+
+
+
+
+#Analyzing VE
+#filter_samples_from_otu_table.py -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -m /scratch/snyder/c/cnevins/ccmapfinaloutput.txt -s 'Date:5.5.2016'
+#core_diversity_analyses.py -i /scratch/scholar/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -a -O 10 -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/ -m /scratch/scholar/c/cnevins/VEfinalmap.txt -e 85831 -t /scratch/scholar/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/scholar/c/cnevins/parametersfile.txt -c Plot,Cover,Tillage,Controls,Rye,5.5.2016:Moisture,SeasonMoisture,Moisture-Quartile,Moisture-Scale,5.5.2016:NO3-,SeasonNO3-,NO3-Quartile,NO3-Scale,5.5.2016:NH4+,SeasonNH4+,NH4+Quartile,NH4+Scale,5.5.2016:InorganicN,SeasonInorganicN,InorganicN-Quartile,InorganicN-Scale,pH,SOM
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_db-rda_cover -n 999
+
+#compare_categories.py --method dbrda -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_db-rda_tillage -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_cover -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Cover -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_cover -n 999
+
+#compare_categories.py --method permanova -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_tillage -n 999
+#compare_categories.py --method permdisp -i /scratch/scholar/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/scholar/c/cnevins/VEfinalmap.txt -c Tillage -o /scratch/scholar/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_tillage -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_5.5.2016:NH4+ -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_5.5.2016:NH4+ -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_5.5.2016:InorganicN -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:InorganicN -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_5.5.2016:InorganicN -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:NO3- -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_5.5.2016:NO3- -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c 5.5.2016:NO3- -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_5.5.2016:NO3- -n 999
+
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_Tillage2 -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_Tillage2 -n 999
+
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/make2dplotscover/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -b 'Cover' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/make2dplotscover_WU/
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permanova_Cover_WU -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE/bdiv_even85831/weighted_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmap.txt -c Cover -o /scratch/snyder/c/cnevins/FinalOutput_only_VE/FinalOutput_only_VE_permdisp_Cover_WU -n 999
+
+
+LOOKING AT TILLAGE WITHIN COVER CROP WITHIN SAMPLING DATE### 
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_CR/FinalOutput_otus_VE__CR_otu_table.biom -m /scratch/snyder/c/cnevins/VEfinalmap.txt -s 'Cover:Cereal Rye'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_CR/FinalOutput_otus_VE__CR_otu_table.biom -a -O 10 --recover_from_failure --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/ -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/parametersfile.txt -c Plot,Tillage,5.5.2016:Moisture,5.5.2016:NO3-,5.5.2016:NH4+,5.5.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/FinalOutput_only_VE_CR_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCR.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_CR/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_Con/FinalOutput_otus_VE__Con_otu_table.biom -m /scratch/snyder/c/cnevins/VEfinalmap.txt -s 'Cover:Control'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_Con/FinalOutput_otus_VE__Con_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/ -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,5.5.2016:Moisture,5.5.2016:NO3-,5.5.2016:NH4+,5.5.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/FinalOutput_only_VE_Con_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapCon.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Con/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_Mix/FinalOutput_otus_VE__Mix_otu_table.biom -m /scratch/snyder/c/cnevins/VEfinalmap.txt -s 'Cover:Mix'
+#core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_Mix/FinalOutput_otus_VE__Mix_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/ -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,5.5.2016:Moisture,5.5.2016:NO3-,5.5.2016:NH4+,5.5.2016:InorganicN
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_permdisp_NH4 -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_BC_permanova_Till -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_BC_permdisp_Till -n 999
+
+#compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_BC_permanova_NH4 -n 999
+#compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/FinalOutput_only_VE_Mix_BC_permdisp_NH4 -n 999
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/make2dplotstillage/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/make2dplotsNH4/
+
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/make2dplotstillageBC/
+#make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapMix.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_Mix/bdiv_even85831/make2dplotsNH4BC/
+
+
+
+#filter_samples_from_otu_table.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/FinalOutput_otus_VE_otu_table.biom -o /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_HV/FinalOutput_otus_VE__HV_otu_table.biom -m /scratch/snyder/c/cnevins/VEfinalmap.txt -s 'Cover:Hairy Vetch'
+core_diversity_analyses.py -i /scratch/snyder/c/cnevins/FinalOutput_CDA/Three_way_interact_VE_HV/FinalOutput_otus_VE__HV_otu_table.biom -a -O 10 --suppress_taxa_summary -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/ -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -e 85831 -t /scratch/snyder/c/cnevins/FinalOutput_otus/rep_set.tre -p /scratch/snyder/c/cnevins/1parametersfile.txt -c Plot,Tillage,5.5.2016:Moisture,5.5.2016:NO3-,5.5.2016:NH4+,5.5.2016:InorganicN
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_permanova_Till -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_permdisp_Till -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_Ve_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_permanova_NH4 -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/weighted_normalized_unifrac_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_permdisp_NH4 -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_BC_permanova_Till -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c Tillage -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_BC_permdisp_Till -n 999
+
+compare_categories.py --method permanova -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_BC_permanova_NH4 -n 999
+compare_categories.py --method permdisp -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_dm.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -c 5.5.2016:NH4+ -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/FinalOutput_only_VE_HV_BC_permdisp_NH4 -n 999
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/make2dplotstillage/
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/weighted_normalized_unifrac_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/make2dplotsNH4/
+
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -b 'Tillage' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/make2dplotstillageBC/
+make_2d_plots.py -i /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/bray_curtis_pc.txt -m /scratch/snyder/c/cnevins/VEfinalmapHV.txt -b '5.5.2016:NH4+' -o /scratch/snyder/c/cnevins/FinalOutput_only_VE_HV/bdiv_even85831/make2dplotsNH4BC/
+

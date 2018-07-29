@@ -1,0 +1,23 @@
+#Clayton Nevins
+#Script for LEfSe analysis 
+
+format_input.py CDA_lefse_VE.txt myCDA_lefse_VE.in -c 2 -s 1 -u 3 -o 1000000
+run_lefse.py myCDA_lefse_VE.in myCDA_lefse_VE.res -l 1.0
+plot_res.py myCDA_lefse_VE.res myCDA_lefse_VE.png
+
+format_input.py CDA_lefse_V3.txt myCDA_lefse_V3.in -c 2 -s 1 -u 3 -o 1000000
+run_lefse.py myCDA_lefse_V3.in myCDA_lefse_V3.res -l 1.0
+plot_res.py myCDA_lefse_V3.res myCDA_lefse_V3.png
+
+format_input.py CDA_lefse_VT.txt myCDA_lefse_VT.in -c 2 -s 1 -u 3 -o 1000000
+run_lefse.py myCDA_lefse_VT.in myCDA_lefse_VT.res -l 1.0
+plot_res.py myCDA_lefse_VT.res myCDA_lefse_VT.png
+
+format_input.py CDA_lefse_R2.txt myCDA_lefse_R2.in -c 2 -s 1 -u 3 -o 1000000
+run_lefse.py myCDA_lefse_R2.in myCDA_lefse_R2.res -l 1.0
+plot_res.py myCDA_lefse_R2.res myCDA_lefse_R2.png
+
+format_input.py CDA_lefse_V6.txt myCDA_lefse_V6.in -c 2 -s 1 -u 3 -o 1000000
+run_lefse.py myCDA_lefse_V6.in myCDA_lefse_V6.res -l 1.0
+plot_res.py myCDA_lefse_V6.res myCDA_lefse_V6.png
+

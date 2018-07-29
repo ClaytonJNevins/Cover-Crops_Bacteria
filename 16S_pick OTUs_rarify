@@ -1,0 +1,252 @@
+#Clayton Nevins
+#16S sequence data
+#QIIME split libraries, concatenate, pick OTUs
+
+#QIIME split libraries
+
+split_libraries_fastq.py -i S.81.fastq -o CoverCropsSet3Split/S.81 --sample_ids S.81 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.82.fastq -o CoverCropsSet3Split/S.82 --sample_ids S.82 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.83.fastq -o CoverCropsSet3Split/S.83 --sample_ids S.83 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.84.fastq -o CoverCropsSet3Split/S.84 --sample_ids S.84 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.85.fastq -o CoverCropsSet3Split/S.85 --sample_ids S.85 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.86.fastq -o CoverCropsSet3Split/S.86 --sample_ids S.86 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.87.fastq -o CoverCropsSet3Split/S.87 --sample_ids S.87 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.88.fastq -o CoverCropsSet3Split/S.88 --sample_ids S.88 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.89.fastq -o CoverCropsSet3Split/S.89 --sample_ids S.89 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.90.fastq -o CoverCropsSet3Split/S.90 --sample_ids S.90 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.91.fastq -o CoverCropsSet3Split/S.91 --sample_ids S.91 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.92.fastq -o CoverCropsSet3Split/S.92 --sample_ids S.92 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.93.fastq -o CoverCropsSet3Split/S.93 --sample_ids S.93 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.94.fastq -o CoverCropsSet3Split/S.94 --sample_ids S.94 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.95.fastq -o CoverCropsSet3Split/S.95 --sample_ids S.95 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.96.fastq -o CoverCropsSet3Split/S.96 --sample_ids S.96 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.97.fastq -o CoverCropsSet3Split/S.97 --sample_ids S.97 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.98.fastq -o CoverCropsSet3Split/S.98 --sample_ids S.98 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.99.fastq -o CoverCropsSet3Split/S.99 --sample_ids S.99 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.100.fastq -o CoverCropsSet3Split/S.100 --sample_ids S.100 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.101.fastq -o CoverCropsSet3Split/S.101 --sample_ids S.101 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.102.fastq -o CoverCropsSet3Split/S.102 --sample_ids S.102 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.103.fastq -o CoverCropsSet3Split/S.103 --sample_ids S.103 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.104.fastq -o CoverCropsSet3Split/S.104 --sample_ids S.104 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.105.fastq -o CoverCropsSet3Split/S.105 --sample_ids S.105 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.106.fastq -o CoverCropsSet3Split/S.106 --sample_ids S.106 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.107.fastq -o CoverCropsSet3Split/S.107 --sample_ids S.107 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.108.fastq -o CoverCropsSet3Split/S.108 --sample_ids S.108 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.109.fastq -o CoverCropsSet3Split/S.109 --sample_ids S.109 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.110.fastq -o CoverCropsSet3Split/S.110 --sample_ids S.110 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.111.fastq -o CoverCropsSet3Split/S.111 --sample_ids S.111 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.112.fastq -o CoverCropsSet3Split/S.112 --sample_ids S.112 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.113.fastq -o CoverCropsSet3Split/S.113 --sample_ids S.113 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.114.fastq -o CoverCropsSet3Split/S.114 --sample_ids S.114 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.115.fastq -o CoverCropsSet3Split/S.115 --sample_ids S.115 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.116.fastq -o CoverCropsSet3Split/S.116 --sample_ids S.116 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.117.fastq -o CoverCropsSet3Split/S.117 --sample_ids S.117 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.118.fastq -o CoverCropsSet3Split/S.118 --sample_ids S.118 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.119.fastq -o CoverCropsSet3Split/S.119 --sample_ids S.119 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.120.fastq -o CoverCropsSet3Split/S.120 --sample_ids S.120 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.C2.fastq -o CoverCropsSet3Split/S.C2 --sample_ids S.C2 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.K2.fastq -o CoverCropsSet3Split/S.K2 --sample_ids S.K2 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.27.1.fastq -o CoverCropsSet3Split/S.27.1 --sample_ids S.27.1 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.35.1.fastq -o CoverCropsSet3Split/S.35.1 --sample_ids S.35.1 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.43.1.fastq -o CoverCropsSet3Split/S.43.1 --sample_ids S.43.1 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.49.fastq -o CoverCropsSet2Split/S.49 --sample_ids S.49 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.50.fastq -o CoverCropsSet2Split/S.50 --sample_ids S.50 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.51.fastq -o CoverCropsSet2Split/S.51 --sample_ids S.51 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.52.fastq -o CoverCropsSet2Split/S.52 --sample_ids S.52 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.53.fastq -o CoverCropsSet2Split/S.53 --sample_ids S.53 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.54.fastq -o CoverCropsSet2Split/S.54 --sample_ids S.54 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.55.fastq -o CoverCropsSet2Split/S.55 --sample_ids S.55 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.56.fastq -o CoverCropsSet2Split/S.56 --sample_ids S.56 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.57.fastq -o CoverCropsSet2Split/S.57 --sample_ids S.57 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.58.fastq -o CoverCropsSet2Split/S.58 --sample_ids S.58 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.59.fastq -o CoverCropsSet2Split/S.59 --sample_ids S.59 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.60.fastq -o CoverCropsSet2Split/S.60 --sample_ids S.60 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.61.fastq -o CoverCropsSet2Split/S.61 --sample_ids S.61 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.62.fastq -o CoverCropsSet2Split/S.62 --sample_ids S.62 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.63.fastq -o CoverCropsSet2Split/S.63 --sample_ids S.63 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.64.fastq -o CoverCropsSet2Split/S.64 --sample_ids S.64 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.65.fastq -o CoverCropsSet2Split/S.65 --sample_ids S.65 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.66.fastq -o CoverCropsSet2Split/S.66 --sample_ids S.66 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.67.fastq -o CoverCropsSet2Split/S.67 --sample_ids S.67 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.68.fastq -o CoverCropsSet2Split/S.68 --sample_ids S.68 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.69.fastq -o CoverCropsSet2Split/S.69 --sample_ids S.69 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.70.fastq -o CoverCropsSet2Split/S.70 --sample_ids S.70 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.71.fastq -o CoverCropsSet2Split/S.71 --sample_ids S.71 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.72.fastq -o CoverCropsSet2Split/S.72 --sample_ids S.72 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.73.fastq -o CoverCropsSet2Split/S.73 --sample_ids S.73 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.74.fastq -o CoverCropsSet2Split/S.74 --sample_ids S.74 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.75.fastq -o CoverCropsSet2Split/S.75 --sample_ids S.75 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.76.fastq -o CoverCropsSet2Split/S.76 --sample_ids S.76 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.77.fastq -o CoverCropsSet2Split/S.77 --sample_ids S.77 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.78.fastq -o CoverCropsSet2Split/S.78 --sample_ids S.78 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.79.fastq -o CoverCropsSet2Split/S.79 --sample_ids S.79 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.80.fastq -o CoverCropsSet2Split/S.80 --sample_ids S.80 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.Q.fastq -o CoverCropsSet2Split/S.Q --sample_ids S.Q --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.R.fastq -o CoverCropsSet2Split/S.R --sample_ids S.R --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.S.fastq -o CoverCropsSet2Split/S.S --sample_ids S.S --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.T.fastq -o CoverCropsSet2Split/S.T --sample_ids S.T --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.U.fastq -o CoverCropsSet2Split/S.U --sample_ids S.U --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.V.fastq -o CoverCropsSet2Split/S.V --sample_ids S.V --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.W.fastq -o CoverCropsSet2Split/S.W --sample_ids S.W --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.X.fastq -o CoverCropsSet2Split/S.X --sample_ids S.X --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.26.fastq -o CoverCropsSet1Split/S.26 --sample_ids S.26 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.28.fastq -o CoverCropsSet1Split/S.28 --sample_ids S.28 --barcode_type "not-barcoded" 
+split_libraries_fastq.py -i S.29.fastq -o CoverCropsSet1Split/S.29 --sample_ids S.29 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.30.fastq -o CoverCropsSet1Split/S.30 --sample_ids S.30 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.31.fastq -o CoverCropsSet1Split/S.31 --sample_ids S.31 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.32.fastq -o CoverCropsSet1Split/S.32 --sample_ids S.32 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.33.fastq -o CoverCropsSet1Split/S.33 --sample_ids S.33 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.34.fastq -o CoverCropsSet1Split/S.34 --sample_ids S.34 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.36.fastq -o CoverCropsSet1Split/S.36 --sample_ids S.36 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.37.fastq -o CoverCropsSet1Split/S.37 --sample_ids S.37 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.38.fastq -o CoverCropsSet1Split/S.38 --sample_ids S.38 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.39.fastq -o CoverCropsSet1Split/S.39 --sample_ids S.39 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.40.fastq -o CoverCropsSet1Split/S.40 --sample_ids S.40 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.41.fastq -o CoverCropsSet1Split/S.41 --sample_ids S.41 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.42.fastq -o CoverCropsSet1Split/S.42 --sample_ids S.42 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.44.fastq -o CoverCropsSet1Split/S.44 --sample_ids S.44 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.45.fastq -o CoverCropsSet1Split/S.45 --sample_ids S.45 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.46.fastq -o CoverCropsSet1Split/S.46 --sample_ids S.46 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.47.fastq -o CoverCropsSet1Split/S.47 --sample_ids S.47 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.48.fastq -o CoverCropsSet1Split/S.48 --sample_ids S.48 --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.A.fastq -o CoverCropsSet1Split/S.A --sample_ids S.A --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.B.fastq -o CoverCropsSet1Split/S.B --sample_ids S.B --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.D.fastq -o CoverCropsSet1Split/S.D --sample_ids S.D --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.E.fastq -o CoverCropsSet1Split/S.E --sample_ids S.E --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.F.fastq -o CoverCropsSet1Split/S.F --sample_ids S.F --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.G.fastq -o CoverCropsSet1Split/S.G --sample_ids S.G --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.H.fastq -o CoverCropsSet1Split/S.H --sample_ids S.H --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.I.fastq -o CoverCropsSet1Split/S.I --sample_ids S.I --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.J.fastq -o CoverCropsSet1Split/S.J --sample_ids S.J --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.L.fastq -o CoverCropsSet1Split/S.L --sample_ids S.L --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.M.fastq -o CoverCropsSet1Split/S.M --sample_ids S.M --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.N.fastq -o CoverCropsSet1Split/S.N --sample_ids S.N --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.O.fastq -o CoverCropsSet1Split/S.O --sample_ids S.O --barcode_type "not-barcoded"
+split_libraries_fastq.py -i S.P.fastq -o CoverCropsSet1Split/S.P --sample_ids S.P --barcode_type "not-barcoded"
+
+#QIIME concatenate
+
+cat CoverCropsSet1Split/S.28/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.29/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.30/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.31/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.32/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.33/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.34/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.36/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.37/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.38/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.39/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.40/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.41/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.43/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.44/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.45/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.46/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.47/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.48/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.A/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.B/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.D/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.E/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.F/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.G/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.H/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.I/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.J/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.L/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.M/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.N/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.O/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet1Split/S.P/seqs.fna >> CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.49/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.50/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.51/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.52/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.53/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.54/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.55/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.56/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.57/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.58/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.59/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.60/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.61/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.62/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.63/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.64/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.65/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.66/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.67/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.68/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.69/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.70/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.71/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.72/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.73/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.74/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.75/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.76/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.77/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.78/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.79/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.80/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.Q/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.R/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.S/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.T/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.U/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.V/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.W/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet2/CoverCropsSet2Split/S.X/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.81/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.82/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.83/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.84/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.85/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.86/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.87/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.88/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.89/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.90/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.91/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.92/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.93/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.94/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.95/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.96/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.97/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.98/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.99/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.100/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.101/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.102/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.103/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.104/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.105/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.106/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.107/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.108/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.109/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.110/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.111/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.112/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.113/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.114/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.115/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.116/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.117/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.118/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.119/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.120/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.C2/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.K2/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.27.1/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.35.1/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+cat CoverCropsSet3/CoverCropsSet3Split/S.42.1/seqs.fna >> CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+
+#Picking open reference OTUs
+#pick_open_reference_otus.py -o FinalOutput_otus/ -aO 10 -i CoverCropsSet1/CoverCropsSet1Split/S.25/seqs.fna
+
+#checking for rarification number with biom summary table
+biom summarize-table -i FinalOutput_otus/otu_table_mc2_w_tax_no_pynast_failures.biom

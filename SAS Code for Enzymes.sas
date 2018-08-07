@@ -2,7 +2,7 @@
 
 /* prepare plot-specific data */
 PROC IMPORT OUT=mydata0
-DATAFILE = "F:\M.Sc\Research and Data\SAS Code\BSData_11012016.xlsx"
+DATAFILE = "F:\BGLUData2016.xlsx"
 DBMS = xlsx REPLACE;
 SHEET = "Sheet1";
 GETNAMES = YES;
@@ -13,9 +13,9 @@ BY LabGroup;
 RUN;
 
 PROC MEANS DATA=mydata0 NOPRINT;
-VAR Date1-Date7 Moisture1-Moisture7 Nitrate1-Nitrate7 Ammonium1-Ammonium7; 
+VAR Date2-Date6 Moisture2-Moisture6 Nitrate2-Nitrate6 Ammonium2-Ammonium6; 
 BY LabGroup;
-OUTPUT OUT=mydata1 MEAN=DateMean1-DateMean7 MMean1-MMean7 NMean1-NMean7 AMean1-AMean7;
+OUTPUT OUT=mydata1 MEAN=DateMean2-DateMean6 MMean2-MMean6 NMean2-NMean6 AMean2-AMean6;
 RUN;
 
 /* wide format */
@@ -30,25 +30,25 @@ RUN;
 /* long format */
 DATA mydata2;
 SET mydata1;
-ARRAY DateList(7) DateMean1-DateMean7;
-ARRAY MList(7) MMean1-MMean7;
-ARRAY NList(7) NMean1-NMean7;
-ARRAY AList(7) AMean1-AMean7;
-DO Date = 1 to 7; 
+ARRAY DateList(5) DateMean2-DateMean6;
+ARRAY MList(5) MMean2-MMean6;
+ARRAY NList(5) NMean2-NMean6;
+ARRAY AList(5) AMean2-AMean6;
+DO Date = 2 to 6; 
   SBG = DateList(Date);
   Moisture = MList(Date);
   Nitrate = NList(Date);
   Ammonium = AList(Date);
   IF SBG NE " " THEN OUTPUT;
 END;
-DROP LabGroup DateMean1-DateMean7 MMean1-MMean7 NMean1-NMean7 AMean1-AMean7;
+DROP LabGroup DateMean2-DateMean6 MMean2-MMean6 NMean2-NMean6 AMean2-AMean6;
 RUN;
 
 
 
 /* Manipulate precipitation and temperature data */
 PROC IMPORT OUT = prectemp
-  DATAFILE = "F:\M.Sc\Research and Data\SAS Code\Precipitation_1206.xlsx" 
+  DATAFILE = "F:\Precipitation_1206.xlsx" 
   DBMS = xlsx REPLACE;
   SHEET = "Sheet1"; 
   GETNAMES = YES;
@@ -98,7 +98,7 @@ DATA data_wPrecTemp;
 RUN;
 
 PROC EXPORT DATA = data_wPrecTemp 
-            OUTFILE = "W:\pu.data\Desktop\SCS project\data_wPrecTemp.xlsx"
+            OUTFILE = "W:\data_wPrecTemp.xlsx"
 			DBMS = XLSX REPLACE;
 RUN;
 

@@ -1,4 +1,4 @@
-#SAS Code for Statistical Analysis of Enzyme Activity
+#SAS scripts for Statistical Analysis of Enzyme Activity
 
 /* prepare plot-specific data */
 PROC IMPORT OUT=mydata0
